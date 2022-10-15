@@ -64,10 +64,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-org.eclipse.m2e.logback.appender
-Warning
-Sat Oct 15 17:37:00 IST 2022
-Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
 
 	*/
 	
