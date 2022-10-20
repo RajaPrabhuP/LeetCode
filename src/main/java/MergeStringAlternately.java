@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class MergeStringAlternately {
 
@@ -11,6 +12,40 @@ public class MergeStringAlternately {
 	 * 
 	 * 
 	 * */
+	
+	private static void mergeStrings(String w1, String w2) {
+		char c1[] = w1.toCharArray();
+		char c2[] = w2.toCharArray();
+		
+		char[] charArray = w1.toCharArray();
+		
+		System.out.println(Arrays.toString(charArray));
+		
+		char result[] = new char[c1.length + c2.length];
+		String result1="";
+		for (int i = 0; i<c1.length; i++) {
+			c1[i] = result[i];
+			System.out.println(Arrays.toString(c1));
+			System.out.println(i);
+			i++;
+
+		}	
+		
+		 for(int j=0;j<=c2.length-1;j++)
+		 {  c2[j]=result[j+1];
+		  	j++;
+		  	System.out.println(j);
+		  }
+		// System.out.println(String.join(result,""));
+		 System.out.println(Arrays.toString(result));
+		for(int k=0;k<=result.length-1;k++)
+		{
+			result1=result1+result[k];
+		}
+		System.out.println("Result" +result1);
+		
+		
+	}
 	
 	public static void MergeStringAlternatelyP(String word1, String word2) {
 		
@@ -37,8 +72,9 @@ public class MergeStringAlternately {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MergeStringAlternatelyP("aaa","bb");
-		MergeStringAlternatelyP("","bbfbsbntgnhjsjsr");
+		//MergeStringAlternatelyP("aaa","bb");
+		//MergeStringAlternatelyP("","bbfbsbntgnhjsjsr");
+		mergeStrings("aaa","bb");
 		
 	}
 
