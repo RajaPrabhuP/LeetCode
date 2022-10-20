@@ -2,11 +2,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class IntersectionofTwoArrays {
+public class P004_IntersectionofTwoArrays {
 	
 	
 	public static void IntersectionofTwoArrays(int[] nums1, int[] nums2) {
-		 /*
+		
+		/*https://leetcode.com/problems/intersection-of-two-arrays-ii/
+		  * Given two integer arrays nums1 and nums2, return an array of their intersection. Each element 
+		  * in the result must appear as many times as it shows in both arrays and you may return the result in any order.
         Test Data:
         +ve [1,2,3,4] [1,2] --> [1, 2]
         Edge[1,2,3,4] [5,6,7,8] -> []
@@ -89,9 +92,7 @@ public class IntersectionofTwoArrays {
     		   right++;
     		  
     		  }
-    	  
-    	   
-    	   
+      
        }
 
        System.out.println(hset);
