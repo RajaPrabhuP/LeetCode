@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class P006_ReverseVowelsofaString {
 	/*https://leetcode.com/problems/reverse-vowels-of-a-string/
@@ -63,11 +64,62 @@ public class P006_ReverseVowelsofaString {
 		}
 	
 		return String.copyValueOf(charArray);
+	}
+	
+	public static String ReverseVowelsofaStringUsingArrayList(String s) {
+		if(s.length() <= 1)
+			return s;
+		int start = 0, end = s.length() - 1;
+		char temp;
+		
+		char[] charArray = s.toCharArray();
+		
+		while(start < end) {
 			
+			int startChInt = charArray[start];
+			int endChInt   = charArray[end];
+			
+			if(!isVowel(charArray[start]) ) {
+					start++;
+			}
+			if(!isVowel(charArray[end])) {
+							end--;
+			}
+			if( isVowel(charArray[start]) && isVowel(charArray[end])) {
+							temp      = charArray[start];
+							charArray[start] = charArray[end];
+							charArray[end] =  temp;
+							start++;
+							end--;
+					}
+						
+		}
+	
+		return String.copyValueOf(charArray);
+	}
+	public static ArrayList<Character> isVowelList() {
+		
+		ArrayList<Character> aList = new ArrayList<Character>();
+		aList.add('a');
+		aList.add('e');
+		aList.add('i');
+		aList.add('o');
+		aList.add('u');
+		aList.add('A');
+		aList.add('E');
+		aList.add('I');
+		aList.add('O');
+		aList.add('U');
+		
+		return aList;
+		
 		
 	}
 	
-	
+	public static boolean isVowel(char c) {
+		
+		return isVowelList().contains(c);
+	}
 	
 	
 	public static void main(String[] args) {

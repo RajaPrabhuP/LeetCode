@@ -87,7 +87,9 @@ public static String ReversePrefixofWordTwo(String word, char ch) {
 		
 		return new StringBuffer(Firstsubstring).reverse().toString() + Secondsubstring ;
 	}
-	public static String ReversePrefixofWordTwoPointer(String word, char ch) {
+	
+
+public static String ReversePrefixofWordTwoPointer(String word, char ch) {
 		
 		int idx = word.indexOf(ch);
 		

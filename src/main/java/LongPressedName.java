@@ -45,6 +45,19 @@ public class LongPressedName {
 			
 				 * */
 	
+	/*https://leetcode.com/problems/long-pressed-name/
+	 * PseudoCode:
+	 * 1. Create 2 pointer p1 and p2 and temp
+	 * 2. temp val can store previous p1 value
+	 * 3. if p1 and p2 is not equal 
+	 * 		then if temp value is equal to p2 increment p2
+	 * 	  else return false
+	 * 4. p1 and p2 is equal increment both p1 and p2
+	 * 		and temp value previous
+	 * 5. if p1 is equal to name.length
+	 * 
+	 * */
+	
 	public static boolean LongPressedNameTwo(String name, String typeOf) {
 		
 		if(typeOf.length() < name.length()) {

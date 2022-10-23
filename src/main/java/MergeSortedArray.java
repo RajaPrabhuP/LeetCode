@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MergeSortedArray {
 
@@ -134,6 +136,21 @@ public class MergeSortedArray {
 		
 		}
 	
+	public static void MergeSortedArrayUsingArrayList(int[] nums1, int[] nums2) throws Exception {
+		if(nums1.length < nums2.length )
+			throw new ArithmeticException("nums1 length mus be greater then Arr2");  
+			
+		ArrayList<Integer> aList1 = new ArrayList<Integer>();
+		ArrayList<Integer> aList2 = new ArrayList<Integer>();
+		
+		for(int i : nums1)
+			aList1.add(i);
+		for(int i : nums2)
+			aList2.add(i);
+		
+		aList1.addAll(aList2);
+		Collections.sort(aList1);
+		}
 	
 	public static void main(String[] args) throws Exception {
 		
