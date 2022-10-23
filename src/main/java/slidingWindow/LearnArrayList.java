@@ -19,6 +19,16 @@ public class LearnArrayList {
 		al.add(6);
 		System.out.println(al.size());
 		
+		al.add(2, 7);
+		al.add(3, 8);
+		al.add(4, 9);
+		al.add(5, 10);
+		System.out.println(al);
+		
+		al.set(2, 12);
+		System.out.println(al);
+		al.removeIf(a-> (a == 1));
+		
 		
 	
 	
