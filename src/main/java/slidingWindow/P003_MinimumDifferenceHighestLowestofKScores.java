@@ -31,8 +31,7 @@ public class P003_MinimumDifferenceHighestLowestofKScores {
 		
 		int start = 0, min = Integer.MAX_VALUE, diff = 0;
 		Arrays.sort(nums);
-		
-		
+				
 		min = Math.min(min, nums[k - 1] - nums[start]);
 		
 		start++;
@@ -40,9 +39,7 @@ public class P003_MinimumDifferenceHighestLowestofKScores {
 			diff = nums[k++] - nums[start++];
 			min = Math.min(min, diff);
 		}
-		
-		return min;
-        
+		return min;   
     }
 	
 	/*Brute Force:
