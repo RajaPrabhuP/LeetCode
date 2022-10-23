@@ -73,41 +73,37 @@ public static boolean isVowel(char c) {
 		String subStr;
 		int cnt = 0;
 		int start = 0, end = 0;
+		int i = 0;
+		subStr = s.substring(start, k++);
 		
-		while(start < k) {
-			if(isVowel(s.charAt(start++))) {
+		while( i < subStr.length()) {
+			if(isVowel(subStr.charAt(i))) {
 				cnt++;
 			}
+			i++;
 		}
-		
+
 		max = Math.max(max, cnt);
-		cnt = 0;
-		
-		while(k < s.length()) {
-			String substring = s.substring(start, k);
-			System.out.println(substring);
-			if(isVowel(substring.charAt(start))) {
+				
+		while(k <= s.length()) {
+			subStr = s.substring(start, k);
+					
+			if(isVowel(subStr.charAt(0))) 
 				cnt--;
-			}
-			if(isVowel(substring.charAt(k))) {
+			if(isVowel(subStr.charAt(subStr.length() - 1))) 
 				cnt++;
-			}
-			
+			max = Math.max(max, cnt);
 			start++;
-			end++;
+			k++;
 		}
-		
-		
 		System.out.println(max);
-		
-		
 	}
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		SlidingWindowAssessmentBruteForce("ABCDEFGHJIK", 3);
-		SlidingWindowAssessment("ABCDEFGHJIK", 3);
+		//SlidingWindowAssessmentBruteForce("ABCDEFGHJIK", 3);
+		SlidingWindowAssessment("ABCDEFGHJIKAEI", 3);
 	}
 
 }
