@@ -6,7 +6,10 @@ public class ShortestDistancetoaCharacter {
 	 * 
 	 * answer where answer.length == s.length and answer[i] is the distance from index i
 	 *  to the closest occurrence of character c in s.
-
+	
+	https://leetcode.com/problems/shortest-distance-to-a-character/
+		
+	
 The distance between two indices i and j is abs(i - j), where abs is the absolute value function.
 	+ve --> [l o v e l e e t c o d e] val e
 	edge -> [a a a a] a [0,0,0,0]
@@ -57,12 +60,52 @@ The distance between two indices i and j is abs(i - j), where abs is the absolut
 		System.out.println(Arrays.toString(resultArr));
 		
 	}
+	
+	
+public static void ShortestDistancetoaCharacterTwoPointerExpandFromCenter(String str, char c) {
+		
+		char[] charArray = str.toCharArray();
+		int[] resultArr = new int[str.length()];
+		int center = 0, left = center - 1, right = center + 1;
+		
+		while(center < charArray.length) {
+			
+			if(charArray[center] == c) {
+				resultArr[center] = 0;
+				center++;right++;left++;
+			}else if(left >= 0) {
+				if(charArray[left] == c) {
+					resultArr[center] = Math.abs(center - left);
+					center++;
+					left = center - 1;
+					right = center + 1;
+				}else {
+					left--;
+				}
+			}else if(right < charArray.length ) {
+				if(charArray[right] == c) {
+					resultArr[center] = Math.abs(right - center);
+					center++;
+					left = center - 1;
+					right = center + 1;
+				}else {
+					right++;
+				}
+			}
+		}
+		
+		System.out.println(Arrays.toString(resultArr));
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		ShortestDistancetoaCharacterTwoPointer("loveleetcode", 'e');
+		//ShortestDistancetoaCharacterTwoPointer("loveleecode", 'e');
 		//ShortestDistancetoaCharacterTwoPointer("abcadefa", 'a');
 		//ShortestDistancetoaCharacterTwoPointer("aaaaa", 'a');
+		
+		ShortestDistancetoaCharacterTwoPointerExpandFromCenter("abcababac", 'c');
+		ShortestDistancetoaCharacterTwoPointerExpandFromCenter("loveleetcode", 'e');
 	}
 
 }

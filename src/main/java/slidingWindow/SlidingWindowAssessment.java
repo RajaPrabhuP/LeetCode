@@ -74,7 +74,9 @@ public static boolean isVowel(char c) {
 		int cnt = 0;
 		int start = 0, end = 0;
 		int i = 0;
-		subStr = s.substring(start, k++);
+		
+		//ABCDEFGHJIKAEI
+		subStr = s.substring(start, k++); // ABC
 		
 		while( i < subStr.length()) {
 			if(isVowel(subStr.charAt(i))) {
@@ -87,7 +89,7 @@ public static boolean isVowel(char c) {
 				
 		while(k <= s.length()) {
 			subStr = s.substring(start, k);
-					
+			System.out.println(subStr);		
 			if(isVowel(subStr.charAt(0))) 
 				cnt--;
 			if(isVowel(subStr.charAt(subStr.length() - 1))) 

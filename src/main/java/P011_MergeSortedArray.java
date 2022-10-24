@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class MergeSortedArray {
+public class P011_MergeSortedArray {
 
 	/*
 	 * You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and 
@@ -152,13 +152,36 @@ public class MergeSortedArray {
 		Collections.sort(aList1);
 		}
 	
+	
+public static void MergeSortedArrayTwoPointersCorrect(int[] nums1, int m, int[] nums2, int n) {
+		
+		int p1 = 0, p2 = 0, len1 = m - n, index = 0;
+		int[] result = new int[len1 + n];
+		while(p1 < len1 || p2 < n) {
+			
+			if(p1 == len1) {
+				result[index++] = nums2[p2++];
+			}else if(p2 == n) {
+				result[index++] = nums1[p1++];
+			}else if(nums1[p1] > nums2[p2]) {
+				result[index++] = nums2[p2++];
+			}else {
+				result[index++] = nums1[p1++];
+			}
+				
+		}
+			System.out.println(Arrays.toString(result));
+		}
+	
+	
 	public static void main(String[] args) throws Exception {
 		
 		//MergeSortedArrayBruteForce(new int[] {1,2,3,4,5,-1, -1, -1, -1}, new int[] {5,6,7,8});
 		//MergeSortedArrayBruteForce(new int[] {1,2}, new int[] {5,6,7,8});
 		//MergeSortedArrayBruteForce(new int[] {1,2,3,0,0,0}, new int[] {1,2,3});
-		MergeSortedArrayTwoPointers(new int[] {1,2,3,0,0,0}, 6, new int[] {2,5,6}, 3);
-		MergeSortedArrayTwoPointers(new int[] {0,0,0}, 3, new int[] {0}, 1);
+//		MergeSortedArrayTwoPointers(new int[] {1,2,3,0,0,0}, 6, new int[] {2,5,6}, 3);
+//		MergeSortedArrayTwoPointers(new int[] {0,0,0}, 3, new int[] {0}, 1);
+		MergeSortedArrayTwoPointersCorrect(new int[] {1,2,3,0,0,0}, 6, new int[] {2,5,6}, 3);
 	}
 
 }

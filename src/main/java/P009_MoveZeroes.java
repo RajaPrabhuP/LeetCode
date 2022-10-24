@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MoveZeroes {
+public class P009_MoveZeroes {
 	
 	/*
 	 * Given an integer array nums, move all 0's to the end of it while maintaining 
@@ -53,12 +53,59 @@ public class MoveZeroes {
 		
 	}
 	
+public static int[] MoveRightZeros(int[] arr) {
+		
+		if(arr.length == 1) 
+			return arr;
+		int left = 0, right = 0, temp;
+		
+		while(right < arr.length) {
+			
+			if(arr[right] != 0) {
+				temp = arr[left];
+				arr[left++] = arr[right];
+				arr[right++] = temp;
+			}else {
+				right++; 
+			}
+		}
+		
+		System.out.println(Arrays.toString(arr));
+		return arr;
+		
+		
+		
+		
+	}
+	
+	public static void movesZeroTwoPointer(int[] nums) {
+		int start = 0, end = start + 1, temp;
+		
+		while(end < nums.length) {
+			
+			if(nums[start] == 0) {
+				
+				if(nums[end] != 0) {
+					temp = nums[start];
+					nums[start] = nums[end];
+					nums[end] = temp;
+					start++;
+				}
+				
+			}else {
+				start++;
+			}
+			end++;
+		}
+		System.out.println(Arrays.toString(nums));
+	}
+	
 	public static void main(String[] args) {
 		
-		MoveZeroesProblem(new int[] {0,0,0,1,2,3,4});
-		MoveZeroesProblem(new int[] {0});
-		MoveZeroesProblem(new int[] {0,0,0});
-
+//		movesZeroTwoPointer(new int[] {0,0,0,1,2,3,4});
+//		MoveZeroesProblem(new int[] {0});
+//		MoveZeroesProblem(new int[] {0,0,0});
+		MoveZeroesProblem(new int[] {1,0,2,0,3,0,14,0,5,0,6,0,70});
 	}
 
 }
