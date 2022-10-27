@@ -56,7 +56,7 @@ A string is called a palindrome string if the reverse of that string is the same
 	          }
 	          
 	 /*
-	  * 
+	  * odd Palindrome 
 	  * 
 	  * */
 	
