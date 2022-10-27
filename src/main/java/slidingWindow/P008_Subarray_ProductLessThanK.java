@@ -57,15 +57,14 @@ public class P008_Subarray_ProductLessThanK {
         //10,5,2,6
 		while(left < nums.length && right < nums.length) {
 			
-			mul = mul * nums[right];
-			
+		
 			if(mul < k) {
+				mul = mul * nums[right];
 				counter++;
 				right++;
 			}else if(mul >= k) {
-				left++;
-				right = left;
-				mul = 1;
+				mul = mul / nums[left];
+				left++;			
 			}
 			
 			if(right >= nums.length) {
@@ -78,9 +77,42 @@ public class P008_Subarray_ProductLessThanK {
         
         System.out.println(counter);
 	}
+	
+	
+	public static int Subarray_ProductLessThanKSlidingSol(int[] nums, int k) {
+		
+		int len = nums.length;
+		int mul = 1, counter = 0, left = 0, right = 0;
+		if(len == 1 && nums[0] < k)
+			return counter;
+		
+        //10,5,2,6
+		while(left < len || right < len) {
+			
+                                                                                                                                                                                                                                			mul = mul * nums[right];
+			if(mul >= k || right >= len) {
+				mul = mul / nums[left];
+				if(nums[left] < k)
+					counter++;
+				left++;
+				right++;
+			}else if(mul < k) {
+				counter++;
+				right++;
+				
+			}
+			System.out.println(counter);
+		}
+       
+        
+        System.out.println(counter);
+        return counter;
+	}
+	
+	
 	public static void main(String[] args) {
 		
-		Subarray_ProductLessThanK(new int[] {10,5,2,6}, 100);
+		Subarray_ProductLessThanKSlidingSol(new int[] {10,5,2,6}, 100);
 		//Subarray_ProductLessThanKSliding(new int[] {10,5,2,6}, 100);
 
 	}

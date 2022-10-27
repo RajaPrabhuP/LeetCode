@@ -51,14 +51,41 @@ A string is called a palindrome string if the reverse of that string is the same
 			 }
 			 
 		 }
-		 
-		 
-		 return result;
-	        
-	              
+		 		 
+		 return result; 
 	          }
 	          
+	 /*
+	  * 
+	  * 
+	  * */
 	
+	 public static String longestPalindromeTwoPointer(String s) {
+		
+		 int left = 0, right = 0, center = 0;
+		 String subStr = "";
+		 
+		 while(center < s.length() ) {
+			 
+					 
+			 if(left <= 0) {
+				 center++;
+				 right++;
+				 }else {
+					
+					 while(left >= 0 && right <= s.length()) {
+						 if(s.charAt(left) == s.charAt(right)) {
+							 left--;
+							 right++;
+						 }
+					 }
+					
+			 }
+		 }
+		 
+		 return s;
+		
+	          }
 	
 	public static void main(String[] args) {
 		
