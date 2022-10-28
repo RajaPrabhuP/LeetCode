@@ -13,6 +13,14 @@ A string is called a palindrome string if the reverse of that string is the same
 	edge -> aaaaaaaa aaaaaa
 	-ve  -> abcdef - ""
  	Pseudo code for BruteForce:
+ 	
+ 	/*
+	 * initialize 2 pointers left and right
+	 * iterate through each character in the string twice, this is to find both odd and even palindromic string
+	 * for odd palindrome, both left and right starts from same index and expand from that index
+	 * for even palindrome, left starts at that index and right starts at left+1 index and expand from there
+	 * while expanding, if both left and right characters are not equal, break the loop and find the substring
+	 * if the substring length is greater
 	 * */
 	
 	public static boolean isPalindrome(String s) {
