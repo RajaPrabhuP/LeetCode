@@ -31,10 +31,7 @@ A subarray is a contiguous subsequence of the array.
 				max = Math.max(max, prod);
 			}
 		}
-					 
-		 
-	       
-	        return max;
+	       return max;
 	    }
 	 
 	
@@ -78,8 +75,6 @@ public static int TwoPointer(int[] nums) {
         	
         	left++;
         	right++;
-        	
-        	
         }
         
         return max;

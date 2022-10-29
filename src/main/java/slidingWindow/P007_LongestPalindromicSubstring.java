@@ -15,12 +15,7 @@ A string is called a palindrome string if the reverse of that string is the same
  	Pseudo code for BruteForce:
  	
  	/*
-	 * initialize 2 pointers left and right
-	 * iterate through each character in the string twice, this is to find both odd and even palindromic string
-	 * for odd palindrome, both left and right starts from same index and expand from that index
-	 * for even palindrome, left starts at that index and right starts at left+1 index and expand from there
-	 * while expanding, if both left and right characters are not equal, break the loop and find the substring
-	 * if the substring length is greater
+	 
 	 * */
 	
 	public static boolean isPalindrome(String s) {
@@ -65,39 +60,39 @@ A string is called a palindrome string if the reverse of that string is the same
 	          
 	 /*
 	  * odd Palindrome 
-	  * 
+	  * * initialize 2 pointers left and right
+	 * iterate through each character in the string twice, this is to find both odd and even palindromic string
+	 * for odd palindrome, both left and right starts from same index and expand from that index
+	 * for even palindrome, left starts at that index and right starts at left+1 index and expand from there
+	 * while expanding, if both left and right characters are not equal, break the loop and find the substring
+	 * if the substring length is greater
 	  * */
 	
 	 public static String longestPalindromeTwoPointer(String s) {
 		
-		 int left = 0, right = 0, center = 0;
+		 int left = 0, right = 0, center = 0, max = Integer.MIN_VALUE;
 		 String subStr = "";
 		 
-		 while(center < s.length() ) {
+		 for(int i = 0; i < s.length() * 2; i++) {
+			 left = i / 2;
+			 right = left + i % 2;
 			 
-					 
-			 if(left <= 0) {
-				 center++;
+			 while((left >= 0 && right < s.length()) && s.charAt(left) == s.charAt(right) ) {
+				 left--;
 				 right++;
-				 }else {
-					
-					 while(left >= 0 && right <= s.length()) {
-						 if(s.charAt(left) == s.charAt(right)) {
-							 left--;
-							 right++;
-						 }
-					 }
-					
+			 }
+			 left++;
+			 if(max < right - (left + 1)) {
+				 max = right - (left + 1);
+				 subStr = s.substring(left, right+1);
 			 }
 		 }
-		 
-		 return s;
-		
-	          }
+		 return subStr;
+		}
 	
 	public static void main(String[] args) {
 		
-		longestPalindrome("");
+		longestPalindrome("babad");
 	}
 
 }
