@@ -22,7 +22,7 @@ public class P002_IsomorphicString {
 		 return new ArrayList(sMap.values()).equals(new ArrayList(tMap.values()));	 
 	        
 	    }
-	 
+	
 	 
 	 public static boolean isIsomorphicOptimized(String s, String t) {
 			
@@ -50,10 +50,37 @@ public class P002_IsomorphicString {
 		 
 	        
 	    }
+	 
+	 public static boolean isIsomorphicOptimizedSingleMap(String s, String t) {
+			
+		 if(s.length() != t.length())
+			 return false;
+		 
+		 HashMap<Character, Character> sMap = new HashMap<Character, Character>();
+				 
+		 for(int i = 0; i < s.length(); i++) {
+			 char sChar = s.charAt(i);
+			 char tChar = t.charAt(i);
+			if((sMap.containsKey(sChar) && sMap.get(sChar) != tChar) || (sMap.containsKey(tChar) && sMap.get(tChar) != sChar)) {
+				return false;
+			}
+			sMap.put(sChar, tChar);
+			sMap.put(tChar, sChar);
+		 }
+		return true;
+		 
+	        
+	    }
 	public static void main(String[] args) {
-		System.out.println(isIsomorphic("egg","add"));
-		System.out.println(isIsomorphic("foo", "bar"));
-		System.out.println(isIsomorphic("bbbaaaba", "aaabbbba"));
+		System.out.println(isIsomorphicOptimized("egg","add"));
+		System.out.println(isIsomorphicOptimized("foo", "bar"));
+		System.out.println(isIsomorphicOptimized("bbbaaaba", "aaabbbba"));
+		
+		System.out.println(isIsomorphicOptimizedSingleMap("egg","add"));
+		System.out.println(isIsomorphicOptimizedSingleMap("foo", "bar"));
+		System.out.println(isIsomorphicOptimizedSingleMap("bbbaaaba", "aaabbbba"));
+	
+		System.out.println(isIsomorphicOptimized("paper", "title"));
 
 	}
 

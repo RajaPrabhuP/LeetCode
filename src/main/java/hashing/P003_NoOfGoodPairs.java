@@ -24,6 +24,7 @@ public class P003_NoOfGoodPairs {
 		 for (int i : nums) {
 			hmap.put(i, hmap.getOrDefault(i, 0) + 1);
 		}
+		 
 		 int sum = 0;
 		  for (int i : hmap.values()) {
 			  int temp = i;
