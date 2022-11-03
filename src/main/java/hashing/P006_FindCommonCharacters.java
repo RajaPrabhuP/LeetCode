@@ -45,6 +45,7 @@ public class P006_FindCommonCharacters {
 				}
 				
 				hmap = tempMap;	
+				
 			}
 			//System.out.println(hmap);
 			List<String> result = new ArrayList<String>();
