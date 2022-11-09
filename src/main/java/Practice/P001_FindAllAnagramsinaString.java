@@ -1,6 +1,7 @@
 package Practice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -86,12 +87,63 @@ public static List<Integer> findAnagrams(String s, String p) {
 		
 		    
 		}
+		
+public static List<Integer> findAnagramsOptimizedSlidingArray(String s, String p) {
+			
+			if(s.length() < p.length())
+				return null;
+			
+			List<Integer> result = new ArrayList<Integer>();
+			int[] pArr = new int[26];
+			int[] sArr = new int[26];
+			
+			for (char c : p.toCharArray()) {
+				pArr[c - 'a']++;
+			}
+			int left = 0, right = p.length();
+			for(int i = 0; i < p.length(); i++) {
+				sArr[s.charAt(i) - 'a']++;				
+			}
+			//System.out.println("SARR -->"+Arrays.toString(sArr));
+			//System.out.println("pARR -->"+Arrays.toString(pArr));
+			//System.out.println(Arrays.equals(pArr, sArr));
+			if(Arrays.equals(pArr, sArr)) {
+				result.add(left);
+			}
+			
+			while(right < s.length()) {
+				sArr[s.charAt(right) - 'a']++;
+				sArr[s.charAt(left) - 'a']--;
+				if(Arrays.equals(pArr, sArr)) {
+					result.add(left + 1);
+				}
+				System.out.println("SARR -->"+Arrays.toString(sArr));
+				System.out.println("pARR -->"+Arrays.toString(pArr));
+				left++;
+				right++;
+			}
+			
+			System.out.println(result);		
+			String subStr = "";
+			
+			
+			
+			return result;
+		
+		
+		
+		    
+		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//findAnagrams("cbaebabacd", "abc");
 		//findAnagrams("abab", "ab");
-		findAnagramsOptimizedSliding("cbaebabacd", "abc");
+		//findAnagramsOptimizedSliding("cbaebabacd", "abc");
 		//findAnagramsOptimizedSliding("abab", "ab");
+		findAnagramsOptimizedSlidingArray("cbaebabacd", "abc");
+		findAnagramsOptimizedSlidingArray("abab", "ab");
+		
 	}
 
 }
+

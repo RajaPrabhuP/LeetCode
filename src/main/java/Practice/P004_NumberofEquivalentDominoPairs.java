@@ -9,6 +9,16 @@ import java.util.stream.Collectors;
 
 public class P004_NumberofEquivalentDominoPairs {
 	
+	//https://leetcode.com/problems/number-of-equivalent-domino-pairs/description/
+	
+	/*
+	 * Take 1 array in 2d array and add in first Set
+	 * And add remaining array one by one in second array
+	 * if first array and second array equals increase counter 
+	 * clear second set
+	 * 	 * 
+	 * */
+	
 	public static int numEquivDominoPairs(int[][] dominoes) {
 		int counter = 0;
 		HashSet<Integer> firstSet = new HashSet<Integer>();
