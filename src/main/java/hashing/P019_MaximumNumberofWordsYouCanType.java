@@ -12,8 +12,6 @@ public class P019_MaximumNumberofWordsYouCanType {
 	 * 4. Iterate the string array and inner for loop to iterate throgh each character
 	 * 5. If character is contains broken set break and move next word
 	 * 6. If word length - 1 is equal to index of word means increase counter and return   
-	 *
-	 * 
 	 * */
 	
 	public int canBeTypedWords(String text, String brokenLetters) {
@@ -44,7 +42,7 @@ public class P019_MaximumNumberofWordsYouCanType {
 	        
 	    }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 
 	}
 
