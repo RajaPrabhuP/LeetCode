@@ -86,7 +86,7 @@ public class P014_buddyStrings {
         for(int i = 0; i < result.size(); i++){
             resultArr[i] = result.get(i);
         }
-        
+       // Arrays.copyOfRange(original, from, to)
         return resultArr;
     }
 

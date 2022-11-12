@@ -7,6 +7,13 @@ import java.util.List;
 public class P013_FindAllNumbersDisappeared {
 	
 	//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+	
+	/*
+	 * If given array adding into set 
+	 * and another for loop start from 1 and ends with arr.lenth
+	 * If the number not contains set means add result list
+	 * 
+	 * */
 	 public static List<Integer> findDisappearedNumbers(int[] nums) {
 		
 		 	HashSet<Integer> hset = new HashSet<Integer>();

@@ -16,6 +16,8 @@ public class KadaneFlagAlgo {
 		return max;
 	}
 	
+
+	
 	public static int kadaneAlgorithAllNegative(int[] nums) {
 		int sum = 0,  max = 0, min = Integer.MIN_VALUE;
 		for(int i = 0; i < nums.length; i++) {
