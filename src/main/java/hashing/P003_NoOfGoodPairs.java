@@ -65,7 +65,7 @@ public class P003_NoOfGoodPairs {
 			 System.out.println(counter);
 			 return counter;	
 		    }
-	 
+	 /**/
 	 public static int numIdenticalPairsUsingFormula(int[] nums) {
 			
 		 HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
