@@ -36,8 +36,7 @@ public class P008_SubstringsofSizeThree {
 	 public static int slidinWindow(String s) {
 		 
 		 int winSize = 0, counter = 0, start = 0;
-		 
-		 
+	 
 		 HashSet<Character> hset = new HashSet<Character>();
 		 
 		 for(int i = 0; i < s.length(); i++) {

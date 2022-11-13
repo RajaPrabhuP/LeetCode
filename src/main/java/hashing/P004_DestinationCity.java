@@ -10,26 +10,24 @@ public class P004_DestinationCity {
 
 	//https://leetcode.com/problems/destination-city/
 	
+	/*
+	 * Using Map the Key as array First Elm(src)
+	 * Value as second elemnet in the array 
+	 * If get the value in Map and Iterate through map key
+	 * If key does not have the value, that is a destination city
+	 * */
 	public static String destCity(List<List<String>> paths) {
 		
 		HashMap<String, String> srcMap = new HashMap<String, String>();
-		
+		for(int i = 0; i < paths.size(); i++) 
+			srcMap.put(paths.get(i).get(0), paths.get(i).get(1));
 	
-		for(int i = 0; i < paths.size(); i++) {
-									
-				srcMap.put(paths.get(i).get(0), paths.get(i).get(1));
-		}
 		
 		for (String list : srcMap.values()) {
-			if(!srcMap.containsKey(list)) {
+			if(!srcMap.containsKey(list)) 
 				return list;
-			}
-		}
-		
-		
-		return null;
-		
-			   
+		}		
+		return null;			   
     }
 	
 	public static void InnerList(List<List<String>> paths) {

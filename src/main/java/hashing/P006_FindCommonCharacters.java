@@ -43,7 +43,6 @@ public class P006_FindCommonCharacters {
 						tempMap.put(words[j].charAt(k), Math.min(tempMap.getOrDefault(words[j].charAt(k), 0) + 1, hmap.get(words[j].charAt(k))));
 					}
 				}
-				
 				hmap = tempMap;	
 				
 			}

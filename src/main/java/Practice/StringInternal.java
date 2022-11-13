@@ -5,6 +5,13 @@ import java.util.Arrays;
 
 public class StringInternal {
 
+	public static String[] printConve(ArrayList<String> al) {
+		return (String[]) al.subList(0, al.size()).toArray();
+		
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		char[] chArr = new char[10];
 		String str = new String("ABCDEF");

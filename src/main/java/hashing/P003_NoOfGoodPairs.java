@@ -65,8 +65,12 @@ public class P003_NoOfGoodPairs {
 			 System.out.println(counter);
 			 return counter;	
 		    }
-	 /**/
-	 public static int numIdenticalPairsUsingFormula(int[] nums) {
+	 /*
+	 * Using HashMap and identify the number of occurence of each elm in array
+	 * And get the values from hmap 
+	 * and add the sum with each number of using formula n(n - 1)/2
+	 * 
+	 * */	 public static int numIdenticalPairsUsingFormula(int[] nums) {
 			
 		 HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
 		 for (int i : nums) 
