@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ShortestDistancetoaCharacter {
+public class P016_ShortestDistancetoaCharacter_821 {
 
 	/*Given a string s and a character c that occurs in s, return an array of integers 
 	 * 
@@ -97,6 +97,46 @@ public static void ShortestDistancetoaCharacterTwoPointerExpandFromCenter(String
 		System.out.println(Arrays.toString(resultArr));
 		
 	}
+
+/**/
+public int[] shortestToChar(String s, char c) {
+    
+	int[] result = new int[s.length()];
+	char[] chArr = s.toCharArray();
+	
+	int left = 0, right = 0;
+	int len = chArr.length;
+	for(int i = 0; i < len; i++ ){
+		left = i - 1;
+		right = i + 1;
+	while(left >= 0 || right < len){
+		
+		if(chArr[i] == c){
+			result[i] = 0;
+			break;
+		}
+		if(left >= 0){
+			if(chArr[left] == c){
+				result[i] = Math.abs(i - left);
+				break;
+			}else{
+				left--;
+			}
+		}
+		if(right < len){
+			if(chArr[right] == c){
+				result[i] = Math.abs(right - i);
+				break;
+			}else{
+				right++;
+			}
+		}
+		//System.out.println(Arrays.toString(result));
+	}
+	
+	}
+	return result;
+}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

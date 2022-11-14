@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -98,9 +99,43 @@ public class P004_IntersectionofTwoArrays {
        System.out.println(hset);
 	}
 	
-	
-	public static void IntersectionofTwoArraysTwoPointers(int[] nums1, int[] nums2) {
-		
+	/*
+	 * --- Pseudo Code ---
+	 * 
+	 * 1. Sort the given arrays
+	 * 2. Create an arraylist to store intersecting values
+	 * 3. Create pointers left and right to 0
+	 * 4. Traverse while left<nums1.length && right<nums2.length
+	 * 5. When the numbers are not equal, increase the least value pointer to next value
+	 * 6. When the numbers are equal, add it to arrayList and increase both pointers
+	 * 7. Convert the arraylist into output array
+	 * 8. Return the output array
+	 * 
+	 */
+	public static int[] IntersectionofTwoArraysTwoPointers(int[] nums1, int[] nums2) {
+	     	Arrays.sort(nums1);
+			Arrays.sort(nums2);
+			ArrayList<Integer> al = new ArrayList<>();
+			int p1 = 0, p2 = 0;
+			
+			while(p1 < nums1.length && p2 < nums2.length){
+				
+				if(nums1[p1] == nums2[p2] ){
+					al.add(nums1[p1]);
+					p1++; p2++;
+				}
+				else if(nums1[p1] < nums2[p2])
+					p1++;
+				else
+					p2++;
+				
+			}
+			
+			int[] result = new int[al.size()];
+	        for(int i = 0; i < al.size(); i++)
+	            result[i] = al.get(i);
+	        
+	        return result;
 		
 		
 	}

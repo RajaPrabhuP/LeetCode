@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class P009_MoveZeroes {
 	
-	/*
+	/*https://leetcode.com/problems/move-zeroes/
 	 * Given an integer array nums, move all 0's to the end of it while maintaining 
 	 * the relative order of the non-zero elements.
 	Note that you must do this in-place without making a copy of the array.
@@ -100,6 +100,27 @@ public static int[] MoveRightZeros(int[] arr) {
 		System.out.println(Arrays.toString(nums));
 	}
 	
+	//Nov 14
+	public void moveZeroes(int[] nums) {
+        
+	       int left = 0, right = 0;
+	        
+	        while(right < nums.length){
+	            
+				if(nums[left] == 0){
+					if(nums[right] != 0){
+						int temp = nums[left];
+						nums[left++] = nums[right];
+						nums[right] = temp;
+					}
+				}else{
+					left++;
+				}
+				right++;
+				
+	        }
+	}
+			
 	public static void main(String[] args) {
 		
 //		movesZeroTwoPointer(new int[] {0,0,0,1,2,3,4});
