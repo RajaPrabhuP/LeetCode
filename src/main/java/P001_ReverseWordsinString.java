@@ -151,6 +151,30 @@ public class P001_ReverseWordsinString {
 			return res.trim();   
        
    }
+	
+	public String reverseStr(String word, int left, int right){
+		char[] chArr = word.toCharArray();
+		
+		while(left < right){
+			char temp = chArr[left];
+			chArr[left++] = chArr[right];
+			chArr[right--] = temp;
+		}
+		
+		return String.valueOf(chArr);
+	}
+  
+    public String reverseWords(String s) {
+       
+	   String[] words = s.split(" ");
+	   String temp = "";
+	   for(int i = 0; i < words.length; i++){
+           int len = words[i].length() - 1;
+		   temp = temp + " " + reverseStr(words[i], 0, len);
+          }
+        
+        return temp.trim();
+    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		reverseWordsTwoPinter("I LOVE YOU");

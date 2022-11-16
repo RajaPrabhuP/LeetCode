@@ -123,13 +123,50 @@ public static boolean LongPressedNameTwoPointer(String name, String typeOf) {
 		return true;
 		
 	}
+
+public static boolean isLongPressedName(String name, String typeOf) {
+    
+	if(name.length() > typeOf.length())
+		return false;
+	
+	int p1 = 0, p2 = 0;
+	char temp = name.charAt(0);
+	
+	while(p1 < name.length() || p2 < typeOf.length()){
+		
+		if(p1 >= name.length() && p2 < typeOf.length()){
+			if(typeOf.charAt(p2) == temp)
+				p2++;
+			else
+				return false;
+        }else if(p2 >= typeOf.length() && p1 < name.length())
+			return false;
+		else{
+			if(name.charAt(p1) == typeOf.charAt(p2)){
+				temp = name.charAt(p1);
+				p1++;p2++;
+			}else if(name.charAt(p1) != typeOf.charAt(p2)){
+				if(typeOf.charAt(p2) == temp)
+					p2++;
+				else 
+					return false;
+			}
+				
+		}
+			
+		}
+		return true;
+	}
+	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	//	System.out.println(LongPressedNameTwo("a", "aaaa"));
 		//System.out.println(LongPressedNameTwo("ab", "aabbc"));
 		
 		//System.out.println(LongPressedNameTwoPointer("abc", "aabbcc"));
-		System.out.println(LongPressedNameTwoPointer("vtkgn", "vttkgnn"));
+		System.out.println(isLongPressedName("alex", "aaleexeex"));
+		
 	}
 
 }
