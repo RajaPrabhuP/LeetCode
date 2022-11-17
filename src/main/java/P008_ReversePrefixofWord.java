@@ -70,6 +70,8 @@ public class P008_ReversePrefixofWord {
 			end--;
 		}
 		
+		
+		
 		return String.copyValueOf(charArray);
 		
 	}
@@ -87,6 +89,8 @@ public static String ReversePrefixofWordTwo(String word, char ch) {
 		
 		return new StringBuffer(Firstsubstring).reverse().toString() + Secondsubstring ;
 	}
+
+
 	
 
 public static String ReversePrefixofWordTwoPointer(String word, char ch) {
@@ -103,6 +107,38 @@ public static String ReversePrefixofWordTwoPointer(String word, char ch) {
 		
 		return reverseWord(Firstsubstring) + Secondsubstring ;
 	}
+
+public static String ReversePrefixofWordTwoPointerOptimized(String word, char ch) {
+	
+	char chArr[] = word.toCharArray();
+	
+	int left = 0, right = 0;
+	
+	while(right < chArr.length){
+		
+		if(chArr[right] == ch)
+			break;
+        
+        right++;
+	}
+	
+	if(right == 0 || right >= word.length())
+		return word;
+	else if(right == word.length() - 1)
+		return new StringBuffer(word).reverse().toString();
+	else{
+		
+		while(left < right){
+			char temp = chArr[left];
+			chArr[left++] = chArr[right];
+			chArr[right--] = temp;
+		}
+		return String.valueOf(chArr);
+	}
+		
+	
+	
+}
 	
 	@Test
 	public void positive2() {

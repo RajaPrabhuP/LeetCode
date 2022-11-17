@@ -56,6 +56,51 @@ public class StringInternal {
 			
 		}
 		
+		HashMap<Integer, Character> rajaMap = new HashMap<>();
+		HashMap<Integer, Integer> devaMap = new HashMap<>();
+		
+		
+		rajaMap.put(1, 'a');
+		rajaMap.put(2, 'b');
+		
+		rajaMap.putIfAbsent(3, 'a');
+		rajaMap.putIfAbsent(1, 'Z');
+		
+		rajaMap.compute(1,  (K, V) -> V = 'L' );
+		rajaMap.compute(4,  (K, V) -> V = 'L' );
+		rajaMap.computeIfPresent(5,  (K, V) -> V = 'N' );
+		
+		System.out.println(rajaMap);
+		rajaMap.computeIfAbsent(4,  V -> 'Y' );
+		devaMap.computeIfAbsent(4, V -> 1000);
+		devaMap.computeIfPresent(4, (raja, rani) -> rani * 4);
+		
+		
+				
+		System.out.println(devaMap);
+		
+		//putIfAbsent =>>  hamp.putIfAbsent(k, V); ==> Particular key is not available in map, this will add K & V Pair
+		//computeIfAbsent =>>  hamp.computeIfAbsent(k, V -> 12124); ==> Particular key is not available in map, this will add K & V Pair
+		
+				
+		//computeIfPresent =>> hmap.computIfPresent(k, (K, V) -> V * 1000); If mentioned K is Prent, If u need update the value we can use this method
+		//compute =>> hmap.computIfPresent(k, (K, V) -> V * 1000); If mentioned K is Prent, If u need update the value we can use this method
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
