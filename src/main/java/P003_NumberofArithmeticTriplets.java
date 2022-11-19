@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class P003_NumberofArithmeticTriplets {
 	
@@ -110,6 +111,7 @@ public class P003_NumberofArithmeticTriplets {
 			if(nums.length < 3)
 				return -1;
 			int cnt = 0;
+			
 			
 			for(int i = 0; i < nums.length - 2; i++) {
 				for (int j = i + 1; j < nums.length - 1; j++) {

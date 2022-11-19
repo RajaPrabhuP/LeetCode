@@ -5,8 +5,12 @@ public class P011_ExcelSheetColumnNumber {
 	 * 
 	 * */
 	
-	 public int titleToNumber(String columnTitle) {
-	        int[] arr = new int[26];
+	 public static int titleToNumber(String columnTitle) {
+	     char ch = 65;  
+	     System.out.println(ch);
+	     System.out.println(706 / 26);
+	    System.out.println(706 % 26);
+		 int[] arr = new int[26];
 	        int pow = 0;
 	        int n = columnTitle.length();
 	        int ans = 0;
@@ -16,9 +20,23 @@ public class P011_ExcelSheetColumnNumber {
 	        }
 	        return ans;
 	    }
+	 
+	 public static String convertToTitle(int n) {
+	      String result = "";
+	      	       
+	       while(n > 0) {
+	    	   System.out.println(n / 26);
+		       System.out.println(n % 26);
+	           n --;
+	           result = (char)('A' + (n % 26)) + result;
+	           n = n / 26;
+	       }
+	       System.out.println(result);
+	       return result;
+	    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//titleToNumber("A");
+		convertToTitle(701);
 	}
-
 }
