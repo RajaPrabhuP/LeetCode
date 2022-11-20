@@ -1,10 +1,13 @@
 package linkedList;
 
+import java.util.ArrayList;
+
 public class SingleImplementation {
  
 	
 	Node head, tail;
 	int length = 0;
+	
 	
 	
 	void add(int value) {
@@ -40,7 +43,9 @@ public class SingleImplementation {
 		Node temp = head;
 		if(temp == null) // list have no node
 			return false;
-		for(int i = 0; i < index - 1; i++) 
+		if(index == 0)
+			head = temp.next;
+		for(int i = 0; temp != null && i < index - 1; i++) 
 			temp = temp.next; // identify the  for remove node previous node
 		
 		if(temp.next == null) //remove node is the last node means return to the element for prevone
@@ -55,10 +60,13 @@ public class SingleImplementation {
 		
 		Node temp = head;
 		int pos = 0;
+		if(temp.value == value)
+			return remove(pos);
 		while(temp.next != null) {
 			if(temp.value == value)
-				remove(pos);
+				 return remove(pos);
 		 	pos++;
+		 	temp =temp.next;
 		}
 		return false;
 		
@@ -96,6 +104,77 @@ public class SingleImplementation {
 		return true;
 	}
 	
+	void printAllNode(Node n) {
+		
+		while(n != null) {
+			System.out.print(n.value +" --> ");
+			n = n.next;
+		}
+		
+	}
+	
+	void printAllOddNode(Node n) {
+		
+		while(n != null) {
+			System.out.print(n.next.value +" --> ");
+			n = n.next.next;
+		}
+		
+	}
+	
+	// indexOf
+	// lastIndexOf
+	
+	int indexOf(int value) {
+		
+		Node temp = head;
+		int pos = -1;
+		while(temp != null) {
+			pos++;
+			if(temp.value == value)			
+				return pos;
+			
+			temp = temp.next;
+		}
+		
+		return -1;
+		
+	}
+	
+	int lastindexOf(int value) {
+		
+		Node temp = head;
+		int pos = 0;
+		int output = -1;
+		while(temp != null) {
+			
+			if(temp.value == value)			
+				output = pos;
+			pos++;
+			temp = temp.next;
+		}
+		
+		return output;
+		
+	}
 	
 	
+	public void addFirst(int value) {
+		
+		Node newNode = new Node(value);
+		
+		if(head == null) {
+			head = newNode;
+		}else {
+			newNode.next = head;
+			head = newNode;			
+		}
+		
+		length++;
+		
+	}
+	
+	public boolean removeLast() {
+		return remove(length - 1);	
+	}
 }

@@ -1,5 +1,8 @@
 package Practice;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class P008_Maximum69Number {
 
 	
@@ -14,7 +17,13 @@ public class P008_Maximum69Number {
 	 public int maximum69Number (int num) {
 	        // O[N]
 	        // O[N]
-	        
+	     
+		 LinkedList<Character> al = new LinkedList<Character>();
+		
+		
+		 
+		 
+		 
 	        String str = String.valueOf(num);
 			char[] strArr = str.toCharArray();
 			int max =  num;
