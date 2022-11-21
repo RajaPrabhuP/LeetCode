@@ -12,9 +12,13 @@ public class SingleLinkedList {
 		sl1.add(5); // 3
 		sl1.add(5); // 4
 		sl1.add(6);
+		//sl1.addAll(new int[] {10, 11, 13});
+		//sl1.remove(3);
+		//sl1.remove(3);
+		sl1.removeAll(5);
 		
 		
-		
+		System.out.println(sl1.size());
 		
 //		sl1.addFirst(7);
 //		//sl1.removeFirst();
@@ -26,9 +30,9 @@ public class SingleLinkedList {
 		
 		
 	//	sl1.removeValue(5);
-//		sl1.printAllNode(sl1.head);
+		sl1.printAllNode(sl1.head);
 //		System.out.println("Index -->"+sl1.indexOf(5));
-		System.out.println("Last Index -->"+sl1.lastindexOf(5));
+	//	System.out.println("Last Index -->"+sl1.lastindexOf(5));
 		
 		//sl1.printAllOddNode(sl1.head);
 		//sl1.removeValue(1);
@@ -45,7 +49,7 @@ public class SingleLinkedList {
 //		System.out.println(sl1.size());
 //		sl1.removeFirst();
 //		System.out.println(sl1.size());
-		
+		System.out.println("");
 		System.out.println(sl1.get(0));
 		System.out.println(sl1.get(1));
 		System.out.println(sl1.get(2));

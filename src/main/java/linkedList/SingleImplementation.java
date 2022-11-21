@@ -35,7 +35,7 @@ public class SingleImplementation {
 		length--;
 	}
 	
-	boolean remove(int index) {
+	boolean remove(int index) { //
 		
 		if( index > length - 1) // if the index is greater then length return false;
 			return false;
@@ -60,9 +60,9 @@ public class SingleImplementation {
 		
 		Node temp = head;
 		int pos = 0;
-		if(temp.value == value)
-			return remove(pos);
-		while(temp.next != null) {
+//		if(temp.value == value)
+//			return remove(pos);
+		while(temp != null) {
 			if(temp.value == value)
 				 return remove(pos);
 		 	pos++;
@@ -141,7 +141,7 @@ public class SingleImplementation {
 		
 	}
 	
-	int lastindexOf(int value) {
+	int lastindexOf(int value) { // 1 2 3 4 2 3 5 6  //out = 6
 		
 		Node temp = head;
 		int pos = 0;
@@ -176,5 +176,30 @@ public class SingleImplementation {
 	
 	public boolean removeLast() {
 		return remove(length - 1);	
+	}
+	
+	boolean removeAll(int value) {
+		
+		Node temp = head;
+		int pos = 0;
+		
+		while(temp != null) {// 1 2 3 5 5 6 7 5 7
+			if(temp.value == value) {
+				  remove(pos);
+				  pos--;
+			}
+		 	pos++;
+		 	temp =temp.next;
+		}
+		return false;
+		
+	}
+	
+	void addAll(int[] value) {
+		
+		for (int i = 0; i < value.length; i++) {
+			add(value[i]);
+		}
+		
 	}
 }
