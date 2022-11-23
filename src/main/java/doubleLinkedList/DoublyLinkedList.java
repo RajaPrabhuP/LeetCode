@@ -15,10 +15,10 @@ public class DoublyLinkedList {
 		
 		db1.addAll(new int[] {88, 99, 198, 908});
 		
-		db1.removeAll(3);
+		db1.removeAll1(3);
 		db1.printAllNode(db1.head);
 		System.out.println(" ");
-		db1.printAllNodeReverse(db1.tail);
+		//db1.printAllNodeReverse(db1.tail);
 		
 	}
 

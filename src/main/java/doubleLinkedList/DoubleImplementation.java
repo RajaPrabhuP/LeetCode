@@ -86,13 +86,42 @@ boolean removeAll(int value) {
 	Node temp = head;
 	int pos = 0;
 	
-	while(temp != null) {// 1 2 3 5 5 6 7 5 7
+	while(temp != null) {//       1 2 3 5 5 6 7 5 7
 		if(temp.value == value) {
 			  remove(pos);
 			  pos--;
 		}
 	 	pos++;
 	 	temp =temp.next;
+	 	
+	}
+	return false;	
+}
+
+boolean removeAll1(int value) {
+	
+	Node temp = head;
+	int pos = 0;
+	
+	while(temp != null) {//       1 2 3 5 5 6 7 5 7
+		if(temp.value == value) {
+			  if(temp.prev == null) {
+				  temp = temp.next;
+				  temp.prev = null;
+		}
+			  else if(temp.next == null) {
+			  		temp = temp.prev;
+			  		temp.next = null;
+		}
+			  else {
+				  temp.prev = temp.next;
+				  temp.next = temp.prev.next;
+				  temp.next.prev = temp;
+			  }
+			  
+		}
+	 	length --;
+	 	temp = temp.next;
 	 	
 	}
 	return false;	
