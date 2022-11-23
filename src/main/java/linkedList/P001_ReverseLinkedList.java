@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class P001_ReverseLinkedList extends SingleImplementation {
 	 public Node reverseList(Node head) {
+		 //https://leetcode.com/problems/reverse-linked-list/
 	        /*Node temp = head; 
 	        Stack<Node> st = new Stack<>();
 	        

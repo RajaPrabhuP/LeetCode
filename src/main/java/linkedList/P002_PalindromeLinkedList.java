@@ -2,7 +2,7 @@ package linkedList;
 
 public class P002_PalindromeLinkedList {
 	 public boolean isPalindrome(Node head) {
-	        
+	        //https://leetcode.com/problems/palindrome-linked-list/
 		   /*initalize two pointers, fast and slow starting at head
 		fast skips 1 node where slow moves to next node
 		once we identified mid and fast goes to tail terminate the loop
