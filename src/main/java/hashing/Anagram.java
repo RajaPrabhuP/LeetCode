@@ -27,10 +27,7 @@ public class Anagram {
 		System.out.println(Arrays.toString(sArr));
 		System.out.println(Arrays.toString(tArr));
 		
-		return Arrays.equals(sArr, tArr );
-		
-		
-		
+		return Arrays.equals(sArr, tArr );	
 	}
 	public static void main(String[] args) {
 		System.out.println(AnagramWithOutMapSet("aaaa", "bbbb"));

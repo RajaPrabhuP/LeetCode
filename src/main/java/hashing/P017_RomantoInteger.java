@@ -28,11 +28,9 @@ public class P017_RomantoInteger {
 	        map.put('M',1000);
 	        
 	        for(int i = s.length() - 1; i >= 0; i--){
-	         
-	            if((s.charAt(i) == 'I' && i < s.length() - 1) && (s.charAt(i + 1) == 'V' || s.charAt(i + 1) == 'X')  ){
+	           if((s.charAt(i) == 'I' && i < s.length() - 1) && (s.charAt(i + 1) == 'V' || s.charAt(i + 1) == 'X')  ){
 	                sum = sum - 1;
-	                
-	            }else if((s.charAt(i) == 'X' && i < s.length() - 1) && (s.charAt(i + 1) == 'L' || s.charAt(i + 1) == 'C') ){
+	           }else if((s.charAt(i) == 'X' && i < s.length() - 1) && (s.charAt(i + 1) == 'L' || s.charAt(i + 1) == 'C') ){
 	                sum = sum - 10;
 	            }else if((s.charAt(i) == 'C' && i < s.length() - 1) && (s.charAt(i + 1) == 'D' || s.charAt(i + 1) == 'M') ){
 	                 sum = sum - 100;

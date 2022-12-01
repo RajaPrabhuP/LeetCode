@@ -43,6 +43,8 @@ public class P004_IntersectionofTwoArrays {
             }
         }
         
+            
+        
         System.arraycopy(resultSet.toArray(), 0, result, 0, 1);
 //        Object[] array = resultSet.toArray();
 //        int[] copyOf = Arrays.copyOf(result, k);

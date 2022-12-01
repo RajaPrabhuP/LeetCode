@@ -34,8 +34,29 @@ A string is called a palindrome string if the reverse of that string is the same
 		
 	}
 	
+	 public static String longestPalindromeN(String word) {
+	       
+	        String temp = "";
+		    int max = 0;
+		    String result = "";
+		for(int i = 0; i < word.length(); i++){
+			for(int j = i; j < word.length(); j++){
+				temp = word.substring(i, j + 1);
+				System.out.println(temp);
+				if(isPalindrome(temp)){
+					 max = Math.max(max, temp.length());
+				if( max > result.length()){     
+					result = temp;
+					System.out.println(result);
+				}
+				}
+			}	
+		}
+		System.out.println("Result -->"+result);
+		return result;
+	    }
 	
-	 public static String longestPalindrome(String s) {
+	 public static java.lang.String longestPalindrome(String s) {
 		
 		 String result = "";
 		 String substr = "";
@@ -92,7 +113,8 @@ A string is called a palindrome string if the reverse of that string is the same
 	
 	public static void main(String[] args) {
 		
-		longestPalindrome("babad");
+		//longestPalindrome("babad");
+		longestPalindromeN("babad");
 	}
 
 }

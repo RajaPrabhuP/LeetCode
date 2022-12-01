@@ -71,10 +71,13 @@ public static void MaxConsecutiveOnesTwo(int[] nums, int k) {
 		}
 		
 	}
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// MaxConsecutiveOnes(new int[] {1,1,1,0,0,0,1,1,1,1,0}, 2);
-		MaxConsecutiveOnesTwo(new int[] {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3);
+		//MaxConsecutiveOnesTwo(new int[] {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3);
+		
 	}
 
 }

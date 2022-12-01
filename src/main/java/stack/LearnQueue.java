@@ -10,6 +10,7 @@ public class LearnQueue {
 		
 		ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
 		Deque<Integer> listDeque = new LinkedList<Integer>();
+		
 		deque.add(1);
 		deque.add(2);
 		deque.add(3);

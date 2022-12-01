@@ -120,13 +120,32 @@ public static int[] MoveRightZeros(int[] arr) {
 				
 	        }
 	}
+	
+	public static void moveZeroesLatest(int[] arr) {
+        
+	       int left = 0, right = 0;
+	        
+	       while(right < arr.length){
+	    		if(arr[left] == 0 && arr[right] != 0){
+	    			int temp = arr[left];
+	    			arr[left++] = arr[right];
+	    			arr[right++] = temp;
+	    		}else if(arr[left] != 0) 
+	    			left++;
+	    		
+	    			right++;
+	    	}
+	       
+	       System.out.println(Arrays.toString(arr));
+	}
+		
 			
 	public static void main(String[] args) {
 		
 //		movesZeroTwoPointer(new int[] {0,0,0,1,2,3,4});
 //		MoveZeroesProblem(new int[] {0});
 //		MoveZeroesProblem(new int[] {0,0,0});
-		MoveZeroesProblem(new int[] {1,0,2,0,3,0,14,0,5,0,6,0,70});
+		moveZeroesLatest(new int[] {1,0,2,0,3,0,14,0,5,0,6,0,70});
 	}
 
 }
