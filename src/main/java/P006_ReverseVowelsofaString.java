@@ -116,6 +116,14 @@ public class P006_ReverseVowelsofaString {
 		
 	}
 	
+	public static String reverseVowelnew() {
+		
+		int left = 
+		
+		return null;
+		
+	}
+	
 	public static boolean isVowel(char c) {
 		
 		return isVowelList().contains(c);
