@@ -18,7 +18,7 @@ public class SelectSort {
 			int idx = i;
 			
 			for(int j = i + 1; j < arr.length; j++) {
-				if(arr[i] > arr[j])
+				if(arr[idx] > arr[j])
 					idx = j;
 			}
 			
@@ -38,7 +38,7 @@ public static void selectSortDesc(int[] arr) {
 			int idx = i;
 			
 			for(int j = i + 1; j < arr.length; j++) {
-				if(arr[i] < arr[j])
+				if(arr[idx] < arr[j])
 					idx = j;
 			}
 			
@@ -52,8 +52,8 @@ public static void selectSortDesc(int[] arr) {
 		
 	}
 	public static void main(String[] args) {
-		selectSort(new int[] {9,8,7,6});
-		selectSortDesc(new int[] {1,2,3,3,4});
+		selectSort(new int[] {1, 1, 3, 1, 2, 4});
+		selectSortDesc(new int[] {4,3,2,1,5,4,8,6,2});
 
 	}
 
