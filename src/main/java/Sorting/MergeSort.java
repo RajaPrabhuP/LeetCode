@@ -10,10 +10,10 @@ public class MergeSort {
 			recursive(arr, left, mid);
 			System.out.println("secondMethod  "+(mid+1)+" "+right);
 			recursive(arr, mid + 1, right);
-			//System.out.println("Left -->"+left);
-			//System.out.println("Right -->"+right);
-			//System.out.println("Mid -->"+mid);
-			//merge( arr, left, mid, right );
+			System.out.println("Left -->"+left);
+			System.out.println("Right -->"+right);
+			System.out.println("Mid -->"+mid);
+			merge( arr, left, mid, right );
 		}
 	}
 	

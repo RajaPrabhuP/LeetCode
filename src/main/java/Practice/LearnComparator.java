@@ -15,7 +15,7 @@ public class LearnComparator {
 		Arrays.sort(arr, Comparator.comparingInt(a -> a[0]));
 		System.out.println(Arrays.deepToString(arr));
 		
-		Arrays.sort(arr, (int[] a1, int[] a2) -> a1[0] - a2[1]);
+		Arrays.sort(arr, (int[] a1, int[] a2) -> a1[0] - a2[0]);
 		System.out.println(Arrays.deepToString(arr));
 		
 		String[][] strArr = {{"AA", "BB"}, {"FF", "EE"}, {"DD", "FF"}};
