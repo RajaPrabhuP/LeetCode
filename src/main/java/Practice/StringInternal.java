@@ -33,7 +33,7 @@ public class StringInternal {
 //		System.out.println(Arrays.toString(al.subList(0, al.size()).toArray()));
 //		String[] array = al.toArray(new String[0]);
 //		
-		HashMap<Character, HashSet<Character>> rodCol = new HashMap<>();
+/*		HashMap<Character, HashSet<Character>> rodCol = new HashMap<>();
 		
 		String col = "B0R0G0B1G1R1";
 		
@@ -86,8 +86,23 @@ public class StringInternal {
 		//computeIfPresent =>> hmap.computIfPresent(k, (K, V) -> V * 1000); If mentioned K is Prent, If u need update the value we can use this method
 		//compute =>> hmap.computIfPresent(k, (K, V) -> V * 1000); If mentioned K is Prent, If u need update the value we can use this method
 		
+	*/
 		
+		String s = "a1";
+		int i = Integer.parseInt("1");
+		System.out.println(i+2);
 		
+		char[] chA = {'d', 'c', 'a', 'b'};
+		
+		Arrays.sort(chA);
+		
+		for(int l = 1; i < chA.length; i++) {
+			int temp = l - 1;
+			if(chA[l - 1] < chA[l])
+				chA[l - 1] = chA[l];
+		}
+		
+		System.out.println(chA);
 		
 		
 		
