@@ -25,10 +25,30 @@ public class UniqueDuplicateSet {
 			System.out.println(dupl);
 			
 		}
+		
+		public static void reverseWord(String s) {
+			char[] chArr = s.toCharArray();
+			int start = 0, end = s.length() - 1;
+
+			while(start < end){
+			if(chArr[start] != ' ' && chArr[end] != ' '){
+				char temp = chArr[start];
+				chArr[start++] = chArr[end];
+				chArr[end--] = temp;
+			}
+			if(chArr[start] == ' ')
+				start++;
+			if(chArr[end] == ' ')
+				end--;
+				
+			}
+
+			System.out.println(String.valueOf(chArr));
+		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		uniqueDupl(new String[] {	"ball22", "bat35",   "glove11", "glove21", "glove11"});
-	
+		//uniqueDupl(new String[] {	"ball22", "bat35",   "glove11", "glove21", "glove11"});
+		reverseWord("this is not me");
 	}
 
 }
