@@ -13,6 +13,7 @@ public class Browser implements Chrome, Firefox{
 		Chrome.super.quit();
 		Firefox.super.quit();
 		System.out.println("Browser also decided...");
+		System.out.println("Browser also decided...");
 		
 	}
 
