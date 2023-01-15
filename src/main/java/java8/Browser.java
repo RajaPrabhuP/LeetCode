@@ -4,7 +4,8 @@ public class Browser implements Chrome, Firefox{
 
 	@Override
 	public void launch() {
-		System.out.println("LaunchBrowser");		
+		System.out.println("LaunchBrowser");	
+		System.out.println("Updating Browser..");
 	}
 	
 	@Override
