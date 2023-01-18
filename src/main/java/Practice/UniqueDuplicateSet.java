@@ -42,7 +42,7 @@ public class UniqueDuplicateSet {
 				end--;
 				
 			}
-
+			
 			System.out.println(String.valueOf(chArr));
 		}
 	public static void main(String[] args) {
