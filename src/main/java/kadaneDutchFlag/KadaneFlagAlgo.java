@@ -21,7 +21,6 @@ public class KadaneFlagAlgo {
 	public static int kadaneAlgorithAllNegative(int[] nums) {
 		int sum = 0,  max = 0, min = Integer.MIN_VALUE;
 		for(int i = 0; i < nums.length; i++) {
-			
 			sum += nums[i];
 			if(sum < 0) {
 				min = Math.max(min, sum);
@@ -67,9 +66,9 @@ public class KadaneFlagAlgo {
 		
 		//System.out.println(kadaneAlgorithAllNegative(new int[] {1, 2, -1,0,3}));
 		
-		stringCount("aaabbcccaadd");
-		stringCount("aaabbccaadde");
-		
+		//stringCount("aaabbcccaadd");
+		//stringCount("aaabbccaadde");
+		System.out.println(kadaneAlgorithAllNegative(new int[] {1,-1,2,12,-8}));
 	}
 
 }

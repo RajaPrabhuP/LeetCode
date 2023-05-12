@@ -51,10 +51,26 @@ public static void selectSortDesc(int[] arr) {
 		System.out.println(Arrays.toString(arr));
 		
 	}
-	public static void main(String[] args) {
-		selectSort(new int[] {1, 1, 3, 1, 2, 4});
-		selectSortDesc(new int[] {4,3,2,1,5,4,8,6,2});
 
+	public static void selectSortPractice(int[] arr) {
+		
+		for(int i = 0; i < arr.length - 1; i++) {
+			int piv = i;
+			for(int j = i + 1; j < arr.length; j++) {
+				if(arr[j] < arr[piv])
+					piv = j;
+			}
+			int temp = arr[i];
+			arr[i] = arr[piv];
+			arr[piv] = temp;		
+		}
+		System.out.println(Arrays.toString(arr));
+		
+	}
+	public static void main(String[] args) {
+//		selectSort(new int[] {1, 1, 3, 1, 2, 4});
+//		selectSortDesc(new int[] {4,3,2,1,5,4,8,6,2});
+		selectSortPractice(new int[] {4,3,2,1,5,4,8,6,2});
 	}
 
 }

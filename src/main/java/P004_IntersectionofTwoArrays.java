@@ -93,7 +93,6 @@ public class P004_IntersectionofTwoArrays {
     		   hset.add(nums1[left]);
     		   left++;
     		   right++;
-    		  
     		  }
       
        }

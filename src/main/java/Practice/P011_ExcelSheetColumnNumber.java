@@ -25,8 +25,8 @@ public class P011_ExcelSheetColumnNumber {
 	      String result = "";
 	      	       
 	       while(n > 0) {
-	    	   System.out.println(n / 26);
-		       System.out.println(n % 26);
+//	    	   System.out.println(n / 26);
+//		       System.out.println(n % 26);
 	           n --;
 	           result = (char)('A' + (n % 26)) + result;
 	           n = n / 26;
@@ -37,6 +37,6 @@ public class P011_ExcelSheetColumnNumber {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//titleToNumber("A");
-		convertToTitle(701);
+		convertToTitle(26);
 	}
 }
