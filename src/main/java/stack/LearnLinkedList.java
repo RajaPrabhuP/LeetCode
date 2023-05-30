@@ -15,7 +15,7 @@ public class LearnLinkedList {
 		al.add(5);
 		al.removeLast();
 		al.pop();
-		al.element()
+		al.element();
 		
 		System.out.println(al);
 		

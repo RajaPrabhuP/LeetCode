@@ -54,7 +54,7 @@ public class P015_UncommonWordsfromTwoSentences {
 		 	String[] s1Arr = s1.split(" ");
 	        String[] s2Arr = s2.split(" ");
 	        
-	        HashMap<String, Integer> s1Map = new HashMap<>();
+	        HashMap<String, Integer> s1Map = new HashMap<String, Integer>();
 	        HashMap<String, Integer> s2Map = new HashMap<>();
 	        ArrayList<String> result = new ArrayList<>();
 	        
